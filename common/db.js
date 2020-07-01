@@ -1,4 +1,4 @@
-function operateData(sql) {
+function operateData(sql,param) {
     return new Promise((resolve, reject) => {
         const mysql = require('mysql')
 
@@ -12,7 +12,7 @@ function operateData(sql) {
 
         cn.connect()
         // 
-        cn.query(sql, (err, result) => {
+        cn.query(sql,param, (err, result) => {
             if (err) {
                 reject(err)
             } else {
