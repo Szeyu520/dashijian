@@ -8,6 +8,8 @@ const cateRouter = require(path.join(__dirname, 'routers/cate.js'))
 const articleRouter = require(path.join(__dirname, 'routers/article.js'))
 const app = express()
 
+app.use('/uploads', express.static('uploads'))
+
 // 处理客户端请求post参数
 // for parsing application/json
 app.use(express.json())
